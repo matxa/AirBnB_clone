@@ -32,7 +32,7 @@ class FileStorage():
         """getting from file"""
         if path.exists(FileStorage.__file_path):
             with open(FileStorage.__file_path, 'r', encoding='utf-8') as file:
-                file_content = json.loads(file.read())
+                file_content = json.load(file)
             for k, v in file_content.items():
                 obj_to_reload = eval(v['__class__'])(**v)
                 FileStorage.__objects.update({k: obj_to_reload})
