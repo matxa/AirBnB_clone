@@ -17,15 +17,15 @@ class FileStorage():
 
     def new(self, obj):
         """new obj"""
-        key = obj.__class__.__name__ + "." + obj.id
+        key = type(obj).__name__ + "." + obj.id
         FileStorage.__objects[key] = obj
 
     def save(self):
         """save to file"""
+        new_dict = {}
+        for k, v in FileStorage.__objects.items():
+            new_dict.update({k: v.to_dict()})
         with open(FileStorage.__file_path, 'w') as file:
-            new_dict = {}
-            for k, v in FileStorage.__objects.items():
-                new_dict.update({k: v.to_dict()})
             json.dump(new_dict, file)
 
     def reload(self):
@@ -33,6 +33,6 @@ class FileStorage():
         if path.exists(FileStorage.__file_path):
             with open(FileStorage.__file_path, 'r', encoding='utf-8') as file:
                 file_content = json.loads(file.read())
-                for k, v in file_content.items():
-                    obj_to_reload = eval(v['__class__'])(**v)
-                    FileStorage.__objects.update({k: obj_to_reload})
+            for k, v in file_content.items():
+                obj_to_reload = eval(v['__class__'])(**v)
+                FileStorage.__objects.update({k: obj_to_reload})
