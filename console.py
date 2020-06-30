@@ -4,6 +4,7 @@ import cmd
 import json
 import models
 from models.base_model import BaseModel
+import shlex
 
 
 class HBNBCommand(cmd.Cmd):
@@ -79,12 +80,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_update(self, line):
         """Updates an instance based on the class name and id"""
-        has_space = line.split('"')
-        val = ""
-        if len(has_space) > 1:
-            val = has_space[1]
-        p_line = line.split()
-
+        p_line = shlex.split(line)
         if len(line) == 0:
             print("** class name missing **")
             return
@@ -106,19 +102,15 @@ class HBNBCommand(cmd.Cmd):
             return
         else:
             for v in models.storage.all().values():
-                if len(has_space) == 1:
-                    val = p_line[3]
                 if v.__class__.__name__ == p_line[0] and v.id == p_line[1]:
                     if p_line[2] in v.__dict__.keys():
                         if type(v.__dict__.get(p_line[2])) == int:
-                            print(type(v.__dict__.get(p_line[2])))
                             if conv_int(p_line[3]):
-                                val = int(p_line[3])
+                                p_line[3] = int(p_line[3])
                         elif type(v.__dict__.get(p_line[2])) == float:
-                            print(type(v.__dict__.get(p_line[2])))
                             if conv_float(p_line[3]):
-                                val = float(p_line[3])
-                    v.__dict__.update({p_line[2]: val})
+                                p_line[3] = float(p_line[3])
+                    v.__dict__.update({p_line[2]: p_line[3]})
                     v.save()
 
     def emptyline(self):
