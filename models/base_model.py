@@ -9,41 +9,37 @@ class BaseModel():
     """Base Model"""
 
     def __init__(self, *args, **kwargs):
-        """Init
-        """
+        """Init"""
         if kwargs:
             for k, v in kwargs.items():
                 if k == '__class__':
                     continue
                 if k == 'created_at' or k == 'updated_at':
                     kwargs[k] = datetime.strptime(v, "%Y-%m-%dT%H:%M:%S.%f")
+                    setattr(self, k, kwargs[k])
+                    continue
+
                 setattr(self, k, kwargs[k])
         else:
-            time_now = datetime.now()
             self.id = str(uuid.uuid4())
+            time_now = datetime.now()
             self.created_at = time_now
             self.updated_at = time_now
             models.storage.new(self)
 
     def __str__(self):
-        """string
-        repr
-        """
+        """string repr"""
         print_tuple = (self.__class__.__name__, self.id, self.__dict__)
         s = "[{}] ({}) {}".format(*print_tuple)
         return s
 
     def save(self):
-        """save the updated
-        time of last modification
-        """
+        """save the updated time of last modification"""
         self.updated_at = datetime.now()
         models.storage.save()
 
     def to_dict(self):
-        """dictionary containing
-        all keys
-        """
+        """dictionary containing all keys"""
         copy_dict = self.__dict__.copy()
         copy_dict['created_at'] = self.created_at.isoformat()
         copy_dict['updated_at'] = self.updated_at.isoformat()
