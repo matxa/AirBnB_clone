@@ -42,7 +42,8 @@ class BaseModel():
         """dictionary containing
         all keys
         """
-        self.__dict__["created_at"] = self.__dict__["created_at"].isoformat()
-        self.__dict__["updated_at"] = self.__dict__["updated_at"].isoformat()
-        self.__dict__.update({"__class__": BaseModel.__name__})
-        return self.__dict__
+        copy_dict = self.__dict__.copy()
+        copy_dict["created_at"] = self.__dict__["created_at"].isoformat()
+        copy_dict["updated_at"] = self.__dict__["updated_at"].isoformat()
+        copy_dict.update({"__class__": BaseModel.__name__})
+        return copy_dict
