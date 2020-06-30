@@ -12,21 +12,16 @@ class FileStorage():
     __objects = {}
 
     def all(self):
-        """all
-        key, v
-        """
+        """all key, v"""
         return FileStorage.__objects
 
     def new(self, obj):
-        """new
-        obj
-        """
-        key = type(obj).__name__ + "." + obj.id
+        """new obj"""
+        key = obj.__class__.__name__ + "." + obj.id
         FileStorage.__objects[key] = obj
 
     def save(self):
-        """save to file
-        """
+        """save to file"""
         with open(FileStorage.__file_path, 'w') as file:
             new_dict = {}
             for k, v in FileStorage.__objects.items():
@@ -34,9 +29,7 @@ class FileStorage():
             json.dump(new_dict, file)
 
     def reload(self):
-        """getting from
-        file
-        """
+        """getting from file"""
         if path.exists(FileStorage.__file_path):
             with open(FileStorage.__file_path, 'r', encoding='utf-8') as file:
                 file_content = json.loads(file.read())
