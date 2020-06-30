@@ -81,10 +81,10 @@ class HBNBCommand(cmd.Cmd):
         """Updates an instance based on the class name and id"""
         has_space = line.split('"')
         val = ""
-        status = 1
         if len(has_space) > 1:
             val = has_space[1]
         p_line = line.split()
+
         if len(line) == 0:
             print("** class name missing **")
             return
@@ -94,14 +94,11 @@ class HBNBCommand(cmd.Cmd):
         elif len(p_line) < 2:
             print("** instance id missing **")
             return
-        elif len(p_line) == 2:
-            for v in models.storage.all().values():
-                if v.__class__.__name__ == p_line[0] and v.id == p_line[1]:
-                    status = 0
-                if status == 1:
-                    print("** no instance found **")
-                    return
-        if len(p_line) < 3:
+        key = p_line[0] + "." + p_line[1]
+        if key not in models.storage.all().keys():
+            print("** no instance found **")
+            return
+        elif len(p_line) < 3:
             print("** attribute name missing **")
             return
         elif len(p_line) < 4:
@@ -122,7 +119,7 @@ class HBNBCommand(cmd.Cmd):
                             if conv_float(p_line[3]):
                                 val = float(p_line[3])
                     v.__dict__.update({p_line[2]: val})
-                    models.storage.save()
+                    v.save()
 
     def emptyline(self):
         """Over emptyline()
