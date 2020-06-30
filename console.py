@@ -12,15 +12,15 @@ class HBNBCommand(cmd.Cmd):
     list_of_existing_classes = ["BaseModel"]
 
     def do_EOF(self, line):
-        """EOF command to exit the program\n"""
+        """EOF command to exit the program"""
         return True
 
     def do_quit(self, line):
-        """Quit command to exit the program\n"""
+        """Quit command to exit the program"""
         return True
 
     def do_create(self, line):
-        """Creates a new instance of BaseModel\n"""
+        """Creates a new instance of BaseModel"""
         p_line = line.split()
         if len(line) == 0:
             print("** class name missing **")
@@ -32,7 +32,7 @@ class HBNBCommand(cmd.Cmd):
             print(my_model.id)
 
     def do_show(self, line):
-        """Prints the string representation of an instance\n"""
+        """Prints the string representation of an instance"""
         stat = validate_cmd(line, self.list_of_existing_classes)
         if stat[0] is 0:
             p_line = stat[1]
@@ -43,7 +43,7 @@ class HBNBCommand(cmd.Cmd):
             print("** no instance found **")
 
     def do_destroy(self, line):
-        """Deletes an instance based on the class name and id\n"""
+        """Deletes an instance based on the class name and id"""
         stat = validate_cmd(line, self.list_of_existing_classes)
         status = 1
         if stat[0] is 0:
@@ -59,7 +59,7 @@ class HBNBCommand(cmd.Cmd):
                 print("** no instance found **")
 
     def do_all(self, line):
-        """Prints all string representation of all instances\n"""
+        """Prints all string representation of all instances"""
         p_line = line.split()
         list_of_obj = []
         if len(p_line) >= 1:
@@ -77,7 +77,7 @@ class HBNBCommand(cmd.Cmd):
         print(list_of_obj)
 
     def do_update(self, line):
-        """Updates an instance based on the class name and id\n"""
+        """Updates an instance based on the class name and id"""
         has_space = line.split('"')
         val = ""
         status = 1
