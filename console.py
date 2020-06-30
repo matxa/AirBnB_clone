@@ -112,6 +112,15 @@ class HBNBCommand(cmd.Cmd):
                 if len(has_space) == 1:
                     val = p_line[3]
                 if v.__class__.__name__ == p_line[0] and v.id == p_line[1]:
+                    if p_line[2] in v.__dict__.keys():
+                        if type(v.__dict__.get(p_line[2])) == int:
+                            print(type(v.__dict__.get(p_line[2])))
+                            if conv_int(p_line[3]):
+                                val = int(p_line[3])
+                        elif type(v.__dict__.get(p_line[2])) == float:
+                            print(type(v.__dict__.get(p_line[2])))
+                            if conv_float(p_line[3]):
+                                val = float(p_line[3])
                     v.__dict__.update({p_line[2]: val})
                     models.storage.save()
 
@@ -141,6 +150,24 @@ def validate_cmd(line, list_of_c):
         state = 1
 
     return (state, p_line)
+
+
+def conv_int(var):
+    """is var convertable to int"""
+    try:
+        int(var)
+        return True
+    except ValueError:
+        return False
+
+
+def conv_float(var):
+    """is var convertable to float"""
+    try:
+        float(var)
+        return True
+    except ValueError:
+        return False
 
 
 if __name__ == '__main__':
