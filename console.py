@@ -27,7 +27,8 @@ class HBNBCommand(cmd.Cmd):
         elif p_line[0] not in self.list_of_existing_classes:
             print("** class doesn't exist **")
         else:
-            my_model = BaseModel()
+            eval_class = p_line[0] + "()"
+            my_model = eval(eval_class)
             my_model.save()
             print(my_model.id)
 
