@@ -107,9 +107,6 @@ class HBNBCommand(cmd.Cmd):
                         if type(v.__dict__.get(p_line[2])) == int:
                             if conv_int(p_line[3]):
                                 p_line[3] = int(p_line[3])
-                        elif type(v.__dict__.get(p_line[2])) == float:
-                            if conv_float(p_line[3]):
-                                p_line[3] = float(p_line[3])
                     v.__dict__.update({p_line[2]: p_line[3]})
                     v.save()
 
