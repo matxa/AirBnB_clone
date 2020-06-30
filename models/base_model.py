@@ -7,6 +7,7 @@ import uuid
 
 class BaseModel():
     """Base Model"""
+
     def __init__(self, *args, **kwargs):
         """Init
         """
@@ -28,7 +29,8 @@ class BaseModel():
         """string
         repr
         """
-        s = ("[{}] ({}) {}".format(BaseModel.__name__, self.id, self.__dict__))
+        print_tuple = (self.__class__.__name__, self.id, self.__dict__)
+        s = "[{}] ({}) {}".format(*print_tuple)
         return s
 
     def save(self):
@@ -43,7 +45,7 @@ class BaseModel():
         all keys
         """
         copy_dict = self.__dict__.copy()
-        copy_dict["created_at"] = self.__dict__["created_at"].isoformat()
-        copy_dict["updated_at"] = self.__dict__["updated_at"].isoformat()
-        copy_dict.update({"__class__": BaseModel.__name__})
+        copy_dict['created_at'] = self.created_at.isoformat()
+        copy_dict['updated_at'] = self.updated_at.isoformat()
+        copy_dict['__class__'] = self.__class__.__name__
         return copy_dict
