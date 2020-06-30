@@ -59,7 +59,7 @@ class HBNBCommand(cmd.Cmd):
                 print("** no instance found **")
 
     def do_all(self, line):
-        """Prints all string representation of all instances"""
+        """Prints all string representation of all instances\n"""
         p_line = line.split()
         list_of_obj = []
         if len(p_line) >= 1:
@@ -75,6 +75,39 @@ class HBNBCommand(cmd.Cmd):
                 list_of_obj.append(v.__str__())
 
         print(list_of_obj)
+
+    def do_update(self, line):
+        """Updates an instance based on the class name and id\n"""
+        status = 1
+        p_line = line.split()
+        if len(line) == 0:
+            print("** class name missing **")
+        elif p_line[0] not in self.list_of_existing_classes:
+            print("** class doesn't exist **")
+        elif len(p_line) < 2:
+            print("** instance id missing **")
+        elif len(p_line) == 2:
+            for v in models.storage.all().values():
+                if v.__class__.__name__ == p_line[0] and v.id == p_line[1]:
+                    status = 0
+                if status == 1:
+                    print("** no instance found **")
+        if len(p_line) < 3:
+            print("** attribute name missing **")
+        elif len(p_line) < 4:
+            print("** value missing **")
+        else:
+            for v in models.storage.all().values():
+                if v.__class__.__name__ == p_line[0] and v.id == p_line[1]:
+                    # v.p_line[2] = p_line[3]
+                    print(str(p_line[2]))
+                    print(str(p_line[3]))
+                    objec = v
+                    status = 0
+
+            if status == 0:
+                objec.p_line[2] = p_line[3]
+                models.storage.save()
 
     def emptyline(self):
         """Over emptyline()
@@ -106,3 +139,8 @@ def validate_cmd(line, list_of_c):
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
+
+# m = BaseModel()
+# print(m)
+# m.money = "$35"
+# print(m)
