@@ -4,13 +4,14 @@ import cmd
 import json
 import models
 from models.base_model import BaseModel
+from models.user import User
 import shlex
 
 
 class HBNBCommand(cmd.Cmd):
     """ HBNB command processor """
     prompt = "(hbnb) "
-    list_of_existing_classes = ["BaseModel"]
+    list_of_existing_classes = ["BaseModel", "User"]
 
     def do_EOF(self, line):
         """EOF command to exit the program"""
