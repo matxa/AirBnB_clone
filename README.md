@@ -121,3 +121,23 @@ AirBnB$ ./console.py
 AirBnB$ ./console.py
 (hbnb) update BaseModel 49faff9a-6318-451f-87b6-910505c55907 first_name "Betty"
 ```
+
+# - ERROR - Handling - Messages -
+
+### If the class name is missing
+**ERROR:**  `** class name missing **`
+
+### If the class name doesn’t exist
+**ERROR:**  `** class doesn't exist **`
+
+### If the id is missing
+**ERROR:**  `** instance id missing **`
+
+### If the instance of the class name doesn’t exist for the id
+**ERROR:**  `** no instance found **`
+
+### If the attribute name is missing
+**ERROR:**  `** attribute name missing **`
+
+### If the value for the attribute name doesn’t exist
+**ERROR:**  `** value missing **`
