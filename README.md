@@ -3,7 +3,11 @@
 # -    CONSOLE    -
 
 - The console is a command interpreter to manage, AirBnB objects.
-    - create a simple flow of serialization/deserialization: Instance <-> Dictionary <-> JSON string <-> file
+    - Create a new object (ex: a new User or a new Place)
+    - Retrieve an object from a file, a database etc…
+    - Do operations on objects (count, compute stats, etc…)
+    - Update attributes of an object
+    - Destroy an object
 
 ## Execution
 ### Interactive mode(How to Start it):
@@ -60,7 +64,8 @@ AirBnB$ ./console.py
 AirBnB$ 
 ```
 
-**help** - shows how a command works - Usage: " help " or " help command_name "
+**help** - shows how a command works 
+- Usage: " help " or " help command_name "
 
 ```
 AirBnB$ ./console.py
@@ -76,7 +81,8 @@ Quit command to exit the program
 
 ```
 
-**create** - creates new instance of given class - Usage: " create class_name "
+**create** - creates new instance of given class 
+- Usage: " create class_name "
 - create returns the ID of the instance created
 
 ```
@@ -85,7 +91,33 @@ AirBnB$ ./console.py
 (hbnb) create BaseModel
 2dd6ef5c-467c-4f82-9521-a772ea7d84e9
 ```
-**show**
-**destroy**
-**all**
-**update**
+
+**show** - Prints the string representation of an instance based on the class name and id
+- Usage: " show class_name id "
+```
+AirBnB$ ./console.py
+(hbnb) show BaseModel 49faff9a-6318-451f-87b6-910505c55907
+[BaseModel] (49faff9a-6318-451f-87b6-910505c55907) {'created_at': datetime.datetime(2017, 10, 2, 3, 10, 25, 903293), 'id': '49faff9a-6318-451f-87b6-910505c55907', 'updated_at': datetime.datetime(2017, 10, 2, 3, 10, 25, 903300)}
+```
+
+**destroy** - Deletes an instance based on the class name and id
+- Usage: " destroy class_name id "
+```
+AirBnB$ ./console.py
+(hbnb) destroy BaseModel 49faff9a-6318-451f-87b6-910505c55907
+```
+
+**all** - Prints all string representation of all instances based or not on the class name
+- Usage: " all " or " all class_name "
+```
+AirBnB$ ./console.py
+(hbnb) all BaseModel
+["[BaseModel] (49faff9a-6318-451f-87b6-910505c55907) {'created_at': datetime.datetime(2017, 10, 2, 3, 10, 25, 903293), 'id': '49faff9a-6318-451f-87b6-910505c55907', 'updated_at': datetime.datetime(2017, 10, 2, 3, 10, 25, 903300)}"]
+```
+
+**update** - Updates an instance based on the class name and id by adding or updating attribute
+- Usage: " update class_name id attribute_name attribute_value "
+```
+AirBnB$ ./console.py
+(hbnb) update BaseModel 49faff9a-6318-451f-87b6-910505c55907 first_name "Betty"
+```
