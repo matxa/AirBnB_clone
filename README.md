@@ -60,9 +60,21 @@ AirBnB$ ./console.py
 AirBnB$ 
 ```
 
-**help** - shows how a command works - Usage: <help> or <help command_name>
+**help** - shows how a command works - Usage: " help " or " help command_name "
 
+```
+AirBnB$ ./console.py
+(hbnb) help
 
+Documented commands (type help <topic>):
+========================================
+EOF  help  quit
+
+(hbnb) 
+(hbnb) help quit
+Quit command to exit the program
+
+```
 **create**
 **show**
 **destroy**
