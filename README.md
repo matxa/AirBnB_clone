@@ -124,26 +124,11 @@ AirBnB$ ./console.py
 
 ## - ERROR - Handling - Messages -
 
-*If the class name is missing:*
-
-**ERROR:**  `** class name missing **`
-
-*If the class name doesn’t exist:*
-
-**ERROR:**  `** class doesn't exist **`
-
-*If the id is missing:*
-
-**ERROR:**  `** instance id missing **`
-
-*If the instance of the class name doesn’t exist for the id:*
-
-**ERROR:**  `** no instance found **`
-
-*If the attribute name is missing:*
-
-**ERROR:**  `** attribute name missing **`
-
-*If the value for the attribute name doesn’t exist:*
-
-**ERROR:**  `** value missing **`
+| **ERROR**                       | **Description**                                                |
+|---------------------------------|----------------------------------------------------------------|
+| `** class name missing **`      | *If the class name doesn’t exist:*                             |
+| `** class doesn't exist **`     | *If the class name doesn’t exist:*                             |
+| `** instance id missing **`     | *If the id is missing:*                                        |
+| `** no instance found **`       | *If the instance of the class name doesn’t exist for the id:*  |
+| `** attribute name missing **`  | *If the attribute name is missing:*                            |
+| `** value missing **`           | *If the value for the attribute name doesn’t exist:*           |
