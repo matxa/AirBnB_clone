@@ -122,7 +122,7 @@ AirBnB$ ./console.py
 (hbnb) update BaseModel 49faff9a-6318-451f-87b6-910505c55907 first_name "Betty"
 ```
 
-# - ERROR - Handling - Messages -
+## - ERROR - Handling - Messages -
 
 ### If the class name is missing
 **ERROR:**  `** class name missing **`
