@@ -126,7 +126,7 @@ AirBnB$ ./console.py
 
 | **ERROR**                       | **Description**                                                |
 |---------------------------------|----------------------------------------------------------------|
-| `** class name missing **`      | *If the class name doesn’t exist:*                             |
+| `** class name missing **`      | *If the class name is missing:*                                |
 | `** class doesn't exist **`     | *If the class name doesn’t exist:*                             |
 | `** instance id missing **`     | *If the id is missing:*                                        |
 | `** no instance found **`       | *If the instance of the class name doesn’t exist for the id:*  |
