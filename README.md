@@ -8,7 +8,8 @@
 ## Execution
 ### Interactive mode:
 
-```$ ./console.py
+```
+$ ./console.py
 (hbnb) help
 
 Documented commands (type help <topic>):
@@ -22,7 +23,8 @@ EOF  help  quit
 
 ### Non-Interactive mode:
 
-```$ echo "help" | ./console.py
+```
+$ echo "help" | ./console.py
 (hbnb)
 
 Documented commands (type help <topic>):
