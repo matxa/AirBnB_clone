@@ -127,6 +127,47 @@ class HBNBCommand(cmd.Cmd):
         """Over emptyline() method"""
         pass
 
+    def count_n_of_instance(self, line):
+        """Prints all string representation of all instances"""
+        p_line = line.split()
+        list_of_obj = []
+        if len(p_line) >= 1:
+            if p_line[0] not in self.list_of_existing_classes:
+                print("** class doesn't exist **")
+            else:
+                for v in models.storage.all().values():
+                    if v.__class__.__name__ == p_line[0]:
+                        list_of_obj.append(v.__str__())
+                return len(list_of_obj)
+
+    def default(self, line):
+        """Default commands"""
+        get_class = line.split(".")
+        get_command = get_class[1].split("(")
+        get_pre_args = get_command[-1].split(")")
+        get_args = get_pre_args[0].split(", ")
+        if get_class[0] in self.list_of_existing_classes:
+            if get_command[0] == "all":
+                self.do_all(get_class[0])
+                return
+            elif get_command[0] == "count":
+                print(self.count_n_of_instance(get_class[0]))
+                return
+            elif get_command[0] == "show":
+                self.do_show(get_class[0] + " " + get_args[0])
+                return
+            elif get_command[0] == "destroy":
+                self.do_destroy(get_class[0] + " " + get_args[0])
+                return
+            elif get_command[0] == "update":
+                self.do_update(
+                    get_class[0] + " " + get_args[0] + " "
+                    + get_args[1] + " " + get_args[2]
+                    )
+                return
+        else:
+            print("** class doesn't exist **")
+
 
 def validate_cmd(line, list_of_c):
     """Validates command to
