@@ -1,7 +1,7 @@
-
 #!/usr/bin/python3
-""" __INIT__ """
+""" where the init lives """
 from models.engine.file_storage import FileStorage
+
 
 storage = FileStorage()
 
