@@ -75,7 +75,16 @@ EOF  help  quit
 Quit command to exit the program
 
 ```
-**create**
+
+**create** - creates new instance of given class - Usage: " create class_name "
+- create returns the ID of the instance created
+
+```
+AirBnB$ ./console.py
+(hbnb)
+(hbnb) create BaseModel
+2dd6ef5c-467c-4f82-9521-a772ea7d84e9
+```
 **show**
 **destroy**
 **all**
