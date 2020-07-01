@@ -5,13 +5,22 @@ import json
 import models
 from models.base_model import BaseModel
 from models.user import User
+from models.state import State
+from models.city import City
+from models.amenity import Amenity
+from models.place import Place
+from models.review import Review
 import shlex
 
 
 class HBNBCommand(cmd.Cmd):
     """ HBNB command processor """
     prompt = "(hbnb) "
-    list_of_existing_classes = ["BaseModel", "User"]
+    list_of_existing_classes = [
+        "BaseModel", "User", "State",
+        "City", "Amenity", "Place",
+        "Review"
+        ]
 
     def do_EOF(self, line):
         """EOF command to exit the program"""
