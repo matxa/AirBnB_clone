@@ -167,6 +167,7 @@ class HBNBCommand(cmd.Cmd):
                 return
         else:
             print("** class doesn't exist **")
+            return
 
 
 def validate_cmd(line, list_of_c):
