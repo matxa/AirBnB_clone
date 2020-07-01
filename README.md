@@ -52,15 +52,17 @@ $
 ```
 AirBnB$ ./console.py
 (hbnb) quit 
-guillaume@ubuntu:~/AirBnB$ 
+/AirBnB$ 
 ```
 ```
 AirBnB$ ./console.py
 (hbnb) EOF
-guillaume@ubuntu:~/AirBnB$ 
+AirBnB$ 
 ```
 
-**help**
+**help** - shows how a command works - Usage: <help> or <help command_name>
+
+
 **create**
 **show**
 **destroy**
