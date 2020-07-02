@@ -129,7 +129,22 @@ AirBnB$ ./console.py
     - All the commands but count(), act the same as the previous like commands
         - {all, show, destroy, update}
 
-**Usage:**   class_name.command(args if command takes any)
+**Usage:  class_name.command(args if command takes any)**
+
+```
+AirBnB$ ./console.py
+(hbnb) User.count()
+2
+(hbnb) 
+```
+
+OR
+
+```
+AirBnB$ ./console.py
+(hbnb) User.update("38f22813-2753-4d42-b37c-57a17f1e4f88", "first_name", "John")
+(hbnb)
+```
 
 ## - ERROR - Handling - Messages -
 
