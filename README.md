@@ -20,8 +20,8 @@ Documented commands (type help <topic>):
 ========================================
 EOF  help  quit
 
-(hbnb) 
-(hbnb) 
+(hbnb)
+(hbnb)
 (hbnb) quit
 ```
 
@@ -34,7 +34,7 @@ $ echo "help" | ./console.py
 Documented commands (type help <topic>):
 ========================================
 EOF  help  quit
-(hbnb) 
+(hbnb)
 $
 $ cat test_help
 help
@@ -45,7 +45,7 @@ $ cat test_help | ./console.py
 Documented commands (type help <topic>):
 ========================================
 EOF  help  quit
-(hbnb) 
+(hbnb)
 $
 ```
 
@@ -55,16 +55,16 @@ $
 
 ```
 AirBnB$ ./console.py
-(hbnb) quit 
-/AirBnB$ 
+(hbnb) quit
+/AirBnB$
 ```
 ```
 AirBnB$ ./console.py
 (hbnb) EOF
-AirBnB$ 
+AirBnB$
 ```
 
-**help** - shows how a command works 
+**help** - shows how a command works
 - Usage: " help " or " help command_name "
 
 ```
@@ -75,13 +75,13 @@ Documented commands (type help <topic>):
 ========================================
 EOF  help  quit
 
-(hbnb) 
+(hbnb)
 (hbnb) help quit
 Quit command to exit the program
 
 ```
 
-**create** - creates new instance of given class 
+**create** - creates new instance of given class
 - Usage: " create class_name "
 - create returns the ID of the instance created
 
