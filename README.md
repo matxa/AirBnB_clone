@@ -122,6 +122,14 @@ AirBnB$ ./console.py
 (hbnb) update BaseModel 49faff9a-6318-451f-87b6-910505c55907 first_name "Betty"
 ```
 
+# Default Command actions
+
+- Commands **{all(), count(), show(), destroy(), update()}**
+    - All the commands but count(), act the same as the previous like commands
+        - {all, show, destroy, update}
+
+**Usage:**   class_name.command(args if command takes any)
+
 ## - ERROR - Handling - Messages -
 
 | **ERROR**                       | **Description**                                                |
