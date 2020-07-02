@@ -125,6 +125,7 @@ AirBnB$ ./console.py
 # Default Command actions
 
 - Commands **{all(), count(), show(), destroy(), update()}**
+    - count() - returns the amount of instances existing for the given class
     - All the commands but count(), act the same as the previous like commands
         - {all, show, destroy, update}
 
