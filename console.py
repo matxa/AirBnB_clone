@@ -123,6 +123,10 @@ class HBNBCommand(cmd.Cmd):
                     v.__dict__.update({p_line[2]: p_line[3]})
                     v.save()
 
+    def help_count(self):
+        """count command"""
+        print("count the amount of instance for given class")
+
     def emptyline(self):
         """Over emptyline() method"""
         pass
