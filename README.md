@@ -135,7 +135,7 @@ AirBnB$ ./console.py
 AirBnB$ ./console.py
 (hbnb) User.count()
 2
-(hbnb) 
+(hbnb)
 ```
 
 OR
