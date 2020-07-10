@@ -29,7 +29,8 @@ section button {
     width: 25%;
     border-right: 1px solid #DDDDDD;
     float: left;
-    display: grid;
+    line-height: 0px;
+    display: flex;
     align-items: center;
     justify-content: center;
 }
@@ -38,7 +39,8 @@ section button {
     height: 100%;
     width: 25%;
     float: left;
-    display: grid;
+    line-height: 0px;
+    display: flex;
     align-items: center;
     justify-content: center;
 }
