@@ -27,34 +27,64 @@ section button {
     width: 25%;
     border-right: 1px solid #DDDDDD;
     float: left;
-    display: grid;
+    display: block;
     align-items: center;
     justify-content: center;
     position: relative;
-    
 }
 
 .amenities {
     height: 100%;
     width: 25%;
     float: left;
-    display: grid;
+    display: block;
     align-items: center;
     justify-content: center;
     position: relative;
 }
 div h3 {
     font-weight: 600;
+    margin-left: 20%;
 }
 
 div h4 {
     font-weight: 400;
     font-size: 14px;
     margin-top: -16px;
+    margin-left: 20%;
 }
 
 .popover{
-    display:inline-block;
-    position:relative;
+    position: absolute;
+    width: 100%;
     background-color: #FAFAFA;
+    border: 1px solid #DDDDDD;
+    border-top: none;
+    border-radius: 4px;
+    margin-top: -2px;
+    padding-top: 20px;
+    visibility: hidden;
+    
+}
+.popover h2 {
+    margin-left: 15%;
+    margin-bottom: -10px;
+}
+
+.popover ul {
+    list-style: none;
+}
+
+.popover li {
+    padding-top: 5px;
+    padding-bottom: 10px;
+    margin-left: 5%;
+}
+
+.filters .locations:hover > .popover {
+    visibility: visible;
+}
+
+.filters .amenities:hover > .popover {
+    visibility: visible;
 }
