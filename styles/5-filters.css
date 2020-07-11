@@ -30,9 +30,11 @@ section button {
     border-right: 1px solid #DDDDDD;
     float: left;
     line-height: 0px;
-    display: flex;
+    display: grid;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
+    border: 2px solid red;
 }
 
 .amenities {
@@ -40,9 +42,11 @@ section button {
     width: 25%;
     float: left;
     line-height: 0px;
-    display: flex;
+    display: grid;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
+    border: 2px solid red;
 }
 div h3 {
     font-weight: 600;
