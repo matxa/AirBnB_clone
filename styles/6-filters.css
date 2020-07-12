@@ -56,8 +56,9 @@ div h4 {
     border-radius: 4px;
     margin-top: -2px;
     padding-top: 20px;
+    position: relative;
     visibility: hidden;
-    
+    z-index: 1;
 }
 .popover h2 {
     margin-left: 15%;
