@@ -1,5 +1,5 @@
 .places {
-    display: flex;  
+    display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
@@ -19,6 +19,7 @@
     border: 1px solid #FF5A5F;
     border-radius: 4px;
     text-align: center;
+    height: 100%;
 }
 
 .places h2 {
@@ -51,6 +52,7 @@
     margin-top: 30px;
     margin-bottom: 5%;
     padding-top: 5px;
+
 }
 
 .max_guest {
@@ -82,19 +84,63 @@
     text-align: left;
 }
 
-.amenities, .reviews {
-    margin-top: 40px;
-    width: 100%;
-    text-align: left;
+.description p {
+    margin-top: -5px;
 }
 
-.amenities h2, .reviews h2 {
+.places .amenities {
+    margin-top: 40px;
+    width: 100%;
+    
+}
+
+.reviews {
+    margin-top: 40px;
+    width: 100%;
+}
+
+.places .amenities h2 {
+    text-align: left;
     font-size: 16px;
     border-bottom: 1px solid #DDDDDD;
     padding-bottom: 10px;
 }
 
-.amenities ul {
+.reviews h2 {
+    text-align: left;
+    font-size: 16px;
+    border-bottom: 1px solid #DDDDDD;
+    padding-bottom: 10px;
+}
+
+.reviews h2 {
+    font-size: 16px;
+    border-bottom: 1px solid #DDDDDD;
+    padding-bottom: 10px;
+}
+
+.reviews ul {
+    list-style: none;
+    margin-left: -20px;
+    margin-bottom: 50px;
+}
+.reviews ul li {
+    margin-left: -20px;
+}
+
+.reviews .rev_ex {
+    text-align: left;
+    margin-left: 0px;
+}
+.reviews .rev_ex h3 {
+    margin-left: 0px;
+}
+
+.reviews .rev_ex p {
+    margin-top: -10px;
+}
+
+.places .amenities ul{
     list-style: none;
     padding: 0;
 }
