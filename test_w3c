@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+FOlDER_H=web_static/*.html
+echo "------------------------"
+echo "|  W3C Validator HTML  |"
+echo "------------------------"
+for f in $FOlDER_H
+do
+    ./w3c_validator.py $f
+done
+
+FOlDER_C=styles/*.css
+echo "------------------------"
+echo "|  W3C Validator CSS   |"
+echo "------------------------"
+for f in $FOlDER_C
+do
+    ./w3c_validator.py $f
+done
